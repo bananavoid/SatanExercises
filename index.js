@@ -8,7 +8,6 @@ let imagesUrl = 'https://en.wikipedia.org/w/api.php?action=query&prop=images&' +
 let imagesResponse = JSON.parse(rest('GET', imagesUrl).getBody());
 let imagesPages = imagesResponse.query.pages;
 let titles = [];
-
 for (let pageId in imagesPages) {
     let images = imagesPages[pageId].images || [];
     images.forEach(image => titles.push(image.title.replace('File:', '').replace(/\.[^/.]+$/, '')));
@@ -24,7 +23,7 @@ let calculateSimilarity = (str, arr) => {
                 similarityIndex++
             }
         });
-    })
+    });
 
     return similarityIndex;
 };
