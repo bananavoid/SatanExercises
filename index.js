@@ -1,3 +1,8 @@
+/*The standard Javascript sort array method used.
+* Whick seem to be implementation of "quicksort" sorting algorithm:
+* https://en.wikipedia.org/wiki/Quicksort
+* Time spent of sorting ~50ms*/
+
 let rest = require('sync-request');
 let pagesUrl = 'https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gsradius=10000&gscoord=49.8412929|24.0316195&gslimit=50&format=json';
 let pagesResponse = JSON.parse(rest('GET', pagesUrl).getBody());
